@@ -1,0 +1,32 @@
+{
+    currencies:[AFN, USD, RUB, EUR],
+    timeSlots:[
+        {startDate:"2017-05-11", endDate:"2017-05-13"},
+        {startDate:"2017-05-11", endDate:"2017-05-12"},
+        {startDate:"2017-05-10", endDate:"2017-05-17"},
+        {startDate:"2017-05-12", endDate:"2017-05-19"}
+    ],
+    timeSlotCoefficients:
+    [
+        {nameFirst:"AFN",
+         nameSecond:"RUB",
+         startDate:"2017-05-11", endDate:"2017-05-13",
+         coefficient:"2.2"
+        },
+        {nameFirst:"USD",
+         nameSecond:"AFN",
+         startDate:"2017-05-11", endDate:"2017-05-12",
+         coefficient:"2.1"
+        },
+        {nameFirst:"EUR",
+         nameSecond:"AFN",
+         startDate:"2017-05-10", endDate:"2017-05-17",
+         coefficient:"0.4"
+        },
+        {nameFirst:"RUB",
+         nameSecond:"USD",
+         startDate:"2017-05-12", endDate:"2017-05-19",
+         coefficient:"2.1"
+        }
+    ]
+}

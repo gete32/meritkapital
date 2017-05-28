@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="main"/>
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"/>
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/favicon.ico" location="/resources/" />
+
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="defaultContentType" value="application/json"/>
+    </bean>
+
+    <bean id="currencyConverter" class="main.java.exchanger.converter.CurrencyConverter"/>
+    <bean id="reverseCurrencyConverter" class="main.java.exchanger.converter.ReverseCurrencyConverter"/>
+    <bean id="timeSlotConverter" class="main.java.exchanger.converter.TimeSlotConverter"/>
+    <bean id="coefficientConverter" class="main.java.exchanger.converter.CoefficientConverter"/>
+
+    <bean id="currencyService" class="main.java.exchanger.service.CurrencyService"/>
+    <bean id="timeSlotService" class="main.java.exchanger.service.TimeSlotService"/>
+    <bean id="coefficientService" class="main.java.exchanger.service.CoefficientService"/>
+
+</beans>

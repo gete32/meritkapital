@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+1.1 - Tables
+--------------------------------------------------------------*/
+table {
+    border: 1px solid #eaeaeb;
+    margin: 0 0 1.78571em;
+    width: 100%;
+}
+table th,
+table td {
+    border: 1px solid #eaeaeb;
+    padding: 0.75em;
+    color: white;
+}
+table th {
+    font-weight: 600;
+    color: white;
+    background-color:#5a5d60;
+}
+
+.table_view_first {
+    color: white;
+}
